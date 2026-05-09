@@ -8,6 +8,7 @@ const projects = [
   { num: '01', title: 'FullStack Task Manager', desc: 'A productivity app with real-time boards, JWT auth, drag-and-drop, and priority labels — solving team collaboration bottlenecks with a clean UI.', tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind'], github: 'https://github.com/Adityashaw2865', demo: '#' },
   { num: '02', title: 'Real-Time Chat App', desc: 'Low-latency WebSocket messaging with multiple rooms, presence indicators, and persistent messages — built to explore event-driven architecture.', tags: ['React', 'Socket.io', 'Node.js', 'Express', 'MongoDB'], github: 'https://github.com/Adityashaw2865', demo: '#' },
   { num: '03', title: 'URL Shortener', desc: 'Link shortening with custom aliases, click analytics, and QR code generation. Fast redirect resolution with a minimal, elegant UI.', tags: ['React', 'Node.js', 'Express', 'MongoDB', 'nanoid'], github: 'https://github.com/Adityashaw2865', demo: '#' },
+  { num: '04', title: 'Focusly', desc: 'A daily task tracker built to eliminate distraction — featuring clean task management, progress charts, and a minimal UI that keeps you in flow state.', tags: ['React', 'Vite', 'Recharts', 'Lucide React'], github: 'https://github.com/Adityashaw2865/focusly', demo: 'https://focusly-lilac.vercel.app/' },
 ]
 
 export default function Projects() {
@@ -41,7 +42,7 @@ export default function Projects() {
                   <a href={github} target="_blank" rel="noreferrer" className="flex-1 text-center text-xs py-2 rounded-lg font-medium transition-all duration-200" style={{ border: '1px solid rgba(251,243,209,0.18)', color: '#FBF3D1' }}
                     onMouseEnter={e => e.currentTarget.style.background = 'rgba(251,243,209,0.08)'}
                     onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>GitHub ↗</a>
-                  <a href={demo} className="flex-1 text-center text-xs py-2 rounded-lg font-medium transition-all duration-200" style={{ border: '1px solid rgba(255,255,255,0.07)', color: '#6b6560' }}
+                  <a href={demo} target="_blank" rel="noreferrer" className="flex-1 text-center text-xs py-2 rounded-lg font-medium transition-all duration-200" style={{ border: '1px solid rgba(255,255,255,0.07)', color: '#6b6560' }}
                     onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = '#C5C7BC'; }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'; e.currentTarget.style.color = '#6b6560'; }}>Live Demo ↗</a>
                 </div>
