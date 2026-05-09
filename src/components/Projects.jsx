@@ -32,7 +32,7 @@ export default function Projects() {
                 <span className="font-display absolute top-5 right-6 font-bold select-none" style={{ fontSize: 48, color: 'rgba(251,243,209,0.06)' }}>{num}</span>
                 <div className="w-1.5 h-1.5 rounded-full mb-5" style={{ background: '#FBF3D1' }} />
                 <h3 className="font-display text-lg font-semibold mb-3 pr-10" style={{ color: '#DEDED1' }}>{title}</h3>
-                <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: '#4a4640' }}>{desc}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: '#9e9a94' }}>{desc}</p>
                 <div className="flex flex-wrap gap-1.5 mb-6">
                   {tags.map(t => (
                     <span key={t} className="font-mono" style={{ fontSize: 10, padding: '3px 8px', borderRadius: 6, border: '1px solid rgba(251,243,209,0.1)', color: 'rgba(251,243,209,0.55)', background: 'rgba(251,243,209,0.04)' }}>{t}</span>
@@ -53,4 +53,5 @@ export default function Projects() {
       </div>
     </section>
   )
+}
 }
