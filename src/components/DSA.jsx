@@ -17,7 +17,7 @@ const platforms = [
   { name: 'LeetCode', sub: '100+ problems', href: 'https://leetcode.com/u/Aditya_shaw2006/' },
   { name: 'GeeksForGeeks', sub: 'Practice & articles', href: 'https://www.geeksforgeeks.org/profile/adityaxshaw' },
   { name: 'Codeforces', sub: 'Competitive rounds', href: 'https://codeforces.com/profile/Aditya_Xshaw' },
-  { name: 'CodeChef', sub: '400+ solved', href: '#' },
+  { name: 'CodeChef', sub: '400+ solved', href: 'https://www.codechef.com/users/aditya_shaw09' },
 ]
 
 export default function DSA() {
