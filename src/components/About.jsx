@@ -7,7 +7,7 @@ const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, tra
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.11 } } }
 
 const stats = [
-  { value: '2nd Year', label: 'Undergraduate' },
+  { value: '3rd Year', label: 'Undergraduate' },
   { value: 'IT', label: 'Branch' },
   { value: 'C++', label: 'Primary Language' },
   { value: 'JGEC', label: 'College' },
@@ -27,14 +27,14 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <motion.div variants={stagger}>
               <motion.p variants={fadeUp} className="leading-relaxed text-lg mb-5" style={{ color: C.faint }}>
-                I'm <span style={{ color: C.muted, fontWeight: 600 }}>Aditya Kumar Shaw</span>, a 2nd year Information Technology student at{' '}
+                I'm <span style={{ color: C.muted, fontWeight: 600 }}>Aditya Kumar Shaw</span>, a 3rd year Information Technology student at{' '}
                 <span style={{ color: C.muted, fontWeight: 600 }}>Jalpaiguri Government Engineering College</span>. Passionate about building web experiences and solving algorithmic challenges.
               </motion.p>
               <motion.p variants={fadeUp} className="leading-relaxed mb-8" style={{ color: C.faint, fontSize: 15 }}>
-                My journey spans full-stack apps with React & Node.js to competitive programming in C++. I've also earned a certification from <span style={{ color: C.dim }}>ISRO's IIRS</span> — reflecting my curiosity beyond just web tech.
+                My journey spans full-stack apps with React & Node.js to competitive programming in C++. I've completed an <span style={{ color: C.dim }}>ML research internship at IIT Jharkhand</span> (fake news detection with BERT) and an <span style={{ color: C.dim }}>RPA Bootcamp at C-DAC Kolkata</span>, plus a certification from <span style={{ color: C.dim }}>ISRO's IIRS</span>.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
-                {['Problem Solving', 'Full-Stack Dev', 'DSA', 'Open Source', 'ISRO Certified'].map(tag => (
+                {['Problem Solving', 'Full-Stack Dev', 'DSA', 'Machine Learning', 'Open Source', 'ISRO Certified'].map(tag => (
                   <span key={tag} className="text-xs px-3 py-1.5 rounded-lg font-mono" style={{ background: 'rgba(251,243,209,0.04)', border: '1px solid rgba(251,243,209,0.09)', color: C.faint }}>
                     {tag}
                   </span>
