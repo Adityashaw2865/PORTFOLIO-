@@ -16,12 +16,12 @@ function SkillBar({ name, level }) {
   return (
     <div className="mb-4 last:mb-0">
       <div className="flex justify-between items-center mb-1.5">
-        <span style={{ fontSize: 13, color: '#C5C7BC' }}>{name}</span>
-        <span className="font-mono" style={{ fontSize: 10, color: '#3a3633' }}>{level}%</span>
+        <span style={{ fontSize: 13, color: 'var(--c3)' }}>{name}</span>
+        <span className="font-mono" style={{ fontSize: 10, color: 'var(--c6)' }}>{level}%</span>
       </div>
-      <div style={{ height: 2, background: 'rgba(251,243,209,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+      <div style={{ height: 2, background: 'rgba(var(--c1-rgb),0.06)', borderRadius: 2, overflow: 'hidden' }}>
         <motion.div
-          style={{ height: '100%', borderRadius: 2, background: 'linear-gradient(90deg, #B6AE9F, #FBF3D1)' }}
+          style={{ height: '100%', borderRadius: 2, background: 'linear-gradient(90deg, var(--c4), var(--c1))' }}
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
@@ -39,20 +39,20 @@ export default function Skills() {
   return (
     <section id="skills" className="py-28 px-6 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-72 h-72 rounded-full" style={{ background: 'radial-gradient(circle,rgba(182,174,159,0.03) 0%,transparent 70%)', filter: 'blur(60px)' }} />
+        <div className="absolute top-1/2 left-0 w-72 h-72 rounded-full" style={{ background: 'radial-gradient(circle,rgba(var(--c4-rgb),0.03) 0%,transparent 70%)', filter: 'blur(60px)' }} />
       </div>
       <div className="max-w-5xl mx-auto" ref={ref}>
         <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
-          <motion.p variants={fadeUp} className="text-xs tracking-[0.25em] uppercase font-mono mb-4" style={{ color: '#B6AE9F' }}>02 / Skills</motion.p>
-          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-14" style={{ color: '#FBF3D1' }}>Technical Stack</motion.h2>
+          <motion.p variants={fadeUp} className="text-xs tracking-[0.25em] uppercase font-mono mb-4" style={{ color: 'var(--c4)' }}>02 / Skills</motion.p>
+          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-14" style={{ color: 'var(--c1)' }}>Technical Stack</motion.h2>
 
           <motion.div variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {skillGroups.map(({ category, items }) => (
               <motion.div key={category} variants={fadeUp} className="p-6 rounded-2xl transition-all duration-350 group"
-                style={{ border: '1px solid rgba(182,174,159,0.1)', background: 'rgba(182,174,159,0.02)' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(251,243,209,0.15)'; e.currentTarget.style.background = 'rgba(251,243,209,0.03)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(182,174,159,0.1)'; e.currentTarget.style.background = 'rgba(182,174,159,0.02)'; }}>
-                <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: '#4a4640' }}>{category}</p>
+                style={{ border: '1px solid rgba(var(--c4-rgb),0.1)', background: 'rgba(var(--c4-rgb),0.02)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.15)'; e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.03)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(var(--c4-rgb),0.1)'; e.currentTarget.style.background = 'rgba(var(--c4-rgb),0.02)'; }}>
+                <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--c7)' }}>{category}</p>
                 {items.map(s => <SkillBar key={s.name} name={s.name} level={s.level} />)}
               </motion.div>
             ))}
