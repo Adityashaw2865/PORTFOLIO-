@@ -6,11 +6,26 @@ const links = ['About', 'Skills', 'Projects', 'DSA', 'Contact']
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [active, setActive] = useState('')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const sections = links.map(l => document.getElementById(l.toLowerCase())).filter(Boolean)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        })
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    )
+    sections.forEach(s => observer.observe(s))
+    return () => observer.disconnect()
   }, [])
 
   const scrollTo = (id) => {
@@ -32,17 +47,23 @@ export default function Navbar() {
         </button>
 
         <ul className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <li key={link}>
-              <button onClick={() => scrollTo(link)} className="text-sm tracking-wide transition-colors duration-200" style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b6560' }}
-                onMouseEnter={e => e.target.style.color = '#DEDED1'}
-                onMouseLeave={e => e.target.style.color = '#6b6560'}>
-                {link}
-              </button>
-            </li>
-          ))}
+          {links.map((link) => {
+            const isActive = active === link.toLowerCase()
+            return (
+              <li key={link}>
+                <button onClick={() => scrollTo(link)} className="relative text-sm tracking-wide transition-colors duration-200 pb-1" style={{ background: 'none', border: 'none', cursor: 'pointer', color: isActive ? '#FBF3D1' : '#6b6560' }}
+                  onMouseEnter={e => { if (!isActive) e.target.style.color = '#DEDED1' }}
+                  onMouseLeave={e => { if (!isActive) e.target.style.color = '#6b6560' }}>
+                  {link}
+                  {isActive && (
+                    <motion.span layoutId="nav-underline" className="absolute left-0 right-0 -bottom-0.5 h-[1.5px]" style={{ background: '#FBF3D1' }} />
+                  )}
+                </button>
+              </li>
+            )
+          })}
           <li>
-            <a href="#" className="text-sm px-4 py-2 rounded-lg transition-all duration-200 font-mono"
+            <a href="https://drive.google.com/file/d/1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p/view?usp=sharing" target="_blank" rel="noreferrer" className="text-sm px-4 py-2 rounded-lg transition-all duration-200 font-mono"
               style={{ border: '1px solid rgba(251,243,209,0.2)', color: '#FBF3D1', background: 'transparent' }}
               onMouseEnter={e => e.currentTarget.style.background = 'rgba(251,243,209,0.06)'}
               onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
