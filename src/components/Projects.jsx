@@ -9,6 +9,7 @@ const projects = [
     num: '01',
     title: 'YouTube Clone',
     desc: 'A full-stack YouTube clone — video feed, channel pages, comments & search, with a custom REST API backend handling auth and data.',
+    highlight: 'Full auth + REST API built from scratch',
     tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
     github: null,
     demo: null,
@@ -17,6 +18,7 @@ const projects = [
     num: '02',
     title: 'AI Agent Orchestration Backend',
     desc: 'A backend that orchestrates multiple AI agents on top of the Claude API — routing tasks and managing multi-step agent workflows.',
+    highlight: 'Multi-agent task routing on Claude API',
     tags: ['Node.js', 'Express', 'Claude API', 'MongoDB'],
     github: null,
     demo: null,
@@ -25,6 +27,7 @@ const projects = [
     num: '03',
     title: 'TaskFlow',
     desc: 'A MERN task tracker with full CRUD, real-time debounced search, filter/sort by status & priority, and a live stats dashboard.',
+    highlight: 'Live dashboard with debounced real-time search',
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose'],
     github: 'https://github.com/Adityashaw2865/Taskflow',
     demo: 'https://taskflow-ochre-kappa.vercel.app/',
@@ -33,6 +36,7 @@ const projects = [
     num: '04',
     title: 'Fake News Detection',
     desc: 'Research project comparing classical ML (LR, SVM, XGBoost) against fine-tuned BERT on the WELFake dataset (72k articles) — BERT hit ~99.2% accuracy. Built during my ML internship at IIT Jharkhand.',
+    highlight: '99.2% accuracy on 72k-article dataset',
     tags: ['Python', 'BERT', 'PyTorch', 'XGBoost', 'Streamlit'],
     github: 'https://github.com/Adityashaw2865/fake-news-detector',
     demo: null,
@@ -41,6 +45,7 @@ const projects = [
     num: '05',
     title: 'Ganga Aarti — Ramkrishnapur Ghat',
     desc: 'A live, bilingual (English/Hindi) static site for the Ganga Aarti at Ramkrishnapur Ghat, Howrah — one of my earliest deployed projects.',
+    highlight: 'Bilingual, live in production',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
     github: 'https://github.com/Adityashaw2865/Ganga_arati',
     demo: 'https://ganga-arati.vercel.app/',
@@ -49,6 +54,7 @@ const projects = [
     num: '06',
     title: 'Focusly',
     desc: 'A daily task tracker built to eliminate distraction — featuring clean task management, progress charts, and a minimal UI that keeps you in flow state.',
+    highlight: 'Streak tracking + analytics heatmaps',
     tags: ['React', 'Vite', 'Recharts', 'Lucide React'],
     github: 'https://github.com/Adityashaw2865/focusly',
     demo: 'https://focusly-lilac.vercel.app/',
@@ -67,7 +73,7 @@ export default function Projects() {
           <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-14" style={{ color: '#FBF3D1' }}>Featured Work</motion.h2>
 
           <motion.div variants={stagger} className="grid md:grid-cols-3 gap-5">
-            {projects.map(({ num, title, desc, tags, github, demo }) => (
+            {projects.map(({ num, title, desc, highlight, tags, github, demo }) => (
               <motion.div key={num} variants={fadeUp}
                 className="group relative p-7 rounded-2xl flex flex-col transition-all duration-400"
                 style={{ border: '1px solid rgba(182,174,159,0.08)', background: 'rgba(182,174,159,0.02)' }}
@@ -76,7 +82,13 @@ export default function Projects() {
                 <span className="font-display absolute top-5 right-6 font-bold select-none" style={{ fontSize: 48, color: 'rgba(251,243,209,0.06)' }}>{num}</span>
                 <div className="w-1.5 h-1.5 rounded-full mb-5" style={{ background: '#FBF3D1' }} />
                 <h3 className="font-display text-lg font-semibold mb-3 pr-10" style={{ color: '#DEDED1' }}>{title}</h3>
-                <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: '#9e9a94' }}>{desc}</p>
+                <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: '#9e9a94' }}>{desc}</p>
+                {highlight && (
+                  <div className="flex items-start gap-2 mb-6">
+                    <span className="mt-0.5" style={{ color: '#FBF3D1', fontSize: 11 }}>✓</span>
+                    <span className="text-xs font-mono leading-snug" style={{ color: 'rgba(251,243,209,0.65)' }}>{highlight}</span>
+                  </div>
+                )}
                 <div className="flex flex-wrap gap-1.5 mb-6">
                   {tags.map(t => (
                     <span key={t} className="font-mono" style={{ fontSize: 10, padding: '3px 8px', borderRadius: 6, border: '1px solid rgba(251,243,209,0.1)', color: 'rgba(251,243,209,0.55)', background: 'rgba(251,243,209,0.04)' }}>{t}</span>
