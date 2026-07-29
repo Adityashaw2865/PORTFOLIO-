@@ -1,5 +1,22 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+
+function StatImage({ src, alt, fallbackLabel, fallbackHref }) {
+  const [failed, setFailed] = useState(false)
+  if (failed) {
+    return (
+      <a href={fallbackHref} target="_blank" rel="noreferrer"
+        className="flex flex-col items-center justify-center gap-2 py-12 px-4 text-center transition-colors duration-200"
+        style={{ color: 'var(--c7)' }}
+        onMouseEnter={e => e.currentTarget.style.color = 'var(--c1)'}
+        onMouseLeave={e => e.currentTarget.style.color = 'var(--c7)'}>
+        <span className="font-mono text-xs">{fallbackLabel}</span>
+        <span className="font-mono text-xs" style={{ color: 'var(--c4)' }}>View on GitHub ↗</span>
+      </a>
+    )
+  }
+  return <img src={src} alt={alt} className="w-full" loading="lazy" onError={() => setFailed(true)} />
+}
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }
@@ -91,28 +108,28 @@ export default function DSA() {
             <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--c6)' }}>GitHub Activity</p>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
-                <img
+                <StatImage
                   src="https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=FBF3D1&icon_color=B6AE9F&text_color=C5C7BC&ring_color=B6AE9F"
                   alt="Aditya's GitHub stats"
-                  className="w-full"
-                  loading="lazy"
+                  fallbackLabel="GitHub Stats"
+                  fallbackHref="https://github.com/Adityashaw2865"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
-                <img
+                <StatImage
                   src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=FBF3D1&text_color=C5C7BC"
                   alt="Aditya's top languages"
-                  className="w-full"
-                  loading="lazy"
+                  fallbackLabel="Top Languages"
+                  fallbackHref="https://github.com/Adityashaw2865"
                 />
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
-              <img
+              <StatImage
                 src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=FBF3D1&line=B6AE9F&point=FBF3D1&hide_border=true&area=true&area_color=B6AE9F"
                 alt="Aditya's GitHub contribution graph"
-                className="w-full"
-                loading="lazy"
+                fallbackLabel="Contribution Graph"
+                fallbackHref="https://github.com/Adityashaw2865"
               />
             </div>
           </motion.div>
