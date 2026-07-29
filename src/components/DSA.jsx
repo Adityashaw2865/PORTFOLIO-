@@ -85,6 +85,37 @@ export default function DSA() {
               </div>
             </motion.div>
           </div>
+
+          {/* GitHub Stats */}
+          <motion.div variants={fadeUp} className="mt-8">
+            <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: '#3a3633' }}>GitHub Activity</p>
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(182,174,159,0.08)' }}>
+                <img
+                  src="https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=FBF3D1&icon_color=B6AE9F&text_color=C5C7BC&ring_color=B6AE9F"
+                  alt="Aditya's GitHub stats"
+                  className="w-full"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(182,174,159,0.08)' }}>
+                <img
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=FBF3D1&text_color=C5C7BC"
+                  alt="Aditya's top languages"
+                  className="w-full"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(182,174,159,0.08)' }}>
+              <img
+                src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=FBF3D1&line=B6AE9F&point=FBF3D1&hide_border=true&area=true&area_color=B6AE9F"
+                alt="Aditya's GitHub contribution graph"
+                className="w-full"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
