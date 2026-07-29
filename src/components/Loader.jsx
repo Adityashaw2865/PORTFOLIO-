@@ -17,23 +17,23 @@ export default function Loader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
-          style={{ background: '#080808' }}
+          style={{ background: 'var(--bg)' }}
         >
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="font-display text-3xl font-bold tracking-tight"
-            style={{ color: '#FBF3D1' }}
+            style={{ color: 'var(--c1)' }}
           >
-            Aditya<span style={{ color: '#B6AE9F' }}>.</span>
+            Aditya<span style={{ color: 'var(--c4)' }}>.</span>
           </motion.p>
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 120 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="h-[2px] mt-5 rounded-full overflow-hidden"
-            style={{ background: 'rgba(251,243,209,0.08)' }}
+            style={{ background: 'rgba(var(--c1-rgb),0.08)' }}
           >
             <motion.div
               initial={{ x: -120 }}
@@ -48,7 +48,7 @@ export default function Loader() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.4 }}
             className="font-mono text-xs tracking-widest uppercase mt-4"
-            style={{ color: '#4a4640' }}
+            style={{ color: 'var(--c7)' }}
           >
             Loading...
           </motion.span>
