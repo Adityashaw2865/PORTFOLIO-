@@ -61,7 +61,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.p variants={item} className="text-lg max-w-2xl mx-auto leading-relaxed mb-8" style={{ color: C.faint }}>
-          Focused on building <span style={{ color: C.muted }}>clean, efficient web experiences</span> and solving complex problems through code.
+          IT undergraduate building <span style={{ color: C.muted }}>modern web applications</span> with React and Node.js, and solving algorithmic problems through <span style={{ color: C.muted }}>DSA and competitive programming</span>.
         </motion.p>
 
         {/* ISRO achievement */}
