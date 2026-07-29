@@ -1,105 +1,61 @@
-
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-
-const TYPED_STRINGS = ['Software Developer', 'DSA Enthusiast', 'React Developer', 'Problem Solver', 'ISRO Certified']
-
-function useTyping(strings, speed = 80, pause = 1800) {
-  const [display, setDisplay] = useState('')
-  const [idx, setIdx] = useState(0)
-  const [charIdx, setCharIdx] = useState(0)
-  const [deleting, setDeleting] = useState(false)
-  useEffect(() => {
-    const current = strings[idx]
-    let timeout
-    if (!deleting && charIdx < current.length) timeout = setTimeout(() => setCharIdx(c => c + 1), speed)
-    else if (!deleting && charIdx === current.length) timeout = setTimeout(() => setDeleting(true), pause)
-    else if (deleting && charIdx > 0) timeout = setTimeout(() => setCharIdx(c => c - 1), speed / 2)
-    else { setDeleting(false); setIdx(i => (i + 1) % strings.length) }
-    setDisplay(current.slice(0, charIdx))
-    return () => clearTimeout(timeout)
-  }, [charIdx, deleting, idx, strings, speed, pause])
-  return display
-}
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 
 const C = { text: 'var(--c1)', muted: 'var(--c2)', dim: 'var(--c3)', faint: 'var(--c4)' }
 
-const wrap = { hidden: {}, visible: { transition: { staggerChildren: 0.13 } } }
-const item = { hidden: { opacity: 0, y: 38 }, visible: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] } } }
+const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } } }
+const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.11 } } }
 
-export default function Hero() {
-  const typed = useTyping(TYPED_STRINGS)
+const stats = [
+  { value: '3rd Year', label: 'Undergraduate' },
+  { value: 'IT', label: 'Branch' },
+  { value: 'C++', label: 'Primary Language' },
+  { value: 'JGEC', label: 'College' },
+]
+
+export default function About() {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-80px' })
+
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
-      {/* Grid */}
-      <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.022, backgroundImage: 'linear-gradient(rgba(var(--c1-rgb),0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--c1-rgb),0.5) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
-      {/* Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(var(--c1-rgb),0.045) 0%,transparent 65%)' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(var(--c4-rgb),0.035) 0%,transparent 70%)' }} />
+    <section id="about" className="py-28 px-6 relative">
+      <div className="max-w-5xl mx-auto" ref={ref}>
+        <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
+          <motion.p variants={fadeUp} className="text-xs tracking-[0.25em] uppercase font-mono mb-4" style={{ color: C.faint }}>01 / About</motion.p>
+          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-12" style={{ color: C.text }}>Who I Am</motion.h2>
 
-      <motion.div className="relative z-10 max-w-4xl mx-auto text-center" variants={wrap} initial="hidden" animate="visible">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <motion.div variants={stagger}>
+              <motion.p variants={fadeUp} className="leading-relaxed text-lg mb-5" style={{ color: C.faint }}>
+                I'm <span style={{ color: C.muted, fontWeight: 600 }}>Aditya Kumar Shaw</span>, a 3rd year Information Technology student at{' '}
+                <span style={{ color: C.muted, fontWeight: 600 }}>Jalpaiguri Government Engineering College</span>. Passionate about building web experiences and solving algorithmic challenges.
+              </motion.p>
+              <motion.p variants={fadeUp} className="leading-relaxed mb-8" style={{ color: C.faint, fontSize: 15 }}>
+                My journey spans full-stack apps with React & Node.js to competitive programming in C++. I've completed an <span style={{ color: C.dim }}>ML research internship at IIT Jharkhand</span> (fake news detection with BERT) and an <span style={{ color: C.dim }}>RPA Bootcamp at C-DAC Kolkata</span>, plus a certification from <span style={{ color: C.dim }}>ISRO's IIRS</span>.
+              </motion.p>
+              <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
+                {['Problem Solving', 'Full-Stack Dev', 'DSA', 'Machine Learning', 'Open Source', 'ISRO Certified'].map(tag => (
+                  <span key={tag} className="text-xs px-3 py-1.5 rounded-lg font-mono" style={{ background: 'rgba(var(--c1-rgb),0.04)', border: '1px solid rgba(var(--c1-rgb),0.09)', color: C.faint }}>
+                    {tag}
+                  </span>
+                ))}
+              </motion.div>
+            </motion.div>
 
-        {/* Open to work badge */}
-        <motion.div variants={item} className="mb-7 inline-flex">
-          <span className="text-xs tracking-[0.2em] uppercase font-mono px-4 py-1.5 rounded-full" style={{ color: C.dim, border: '1px solid rgba(var(--c3-rgb),0.18)', background: 'rgba(var(--c3-rgb),0.04)' }}>
-            Open to Internships & Opportunities
-          </span>
+            <motion.div variants={stagger} className="grid grid-cols-2 gap-4">
+              {stats.map(({ value, label }) => (
+                <motion.div key={label} variants={fadeUp} className="p-5 rounded-xl transition-all duration-300 group"
+                  style={{ border: '1px solid rgba(var(--c4-rgb),0.1)', background: 'rgba(var(--c4-rgb),0.02)' }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.18)'; e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.04)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(var(--c4-rgb),0.1)'; e.currentTarget.style.background = 'rgba(var(--c4-rgb),0.02)'; }}>
+                  <p className="font-display text-2xl font-bold mb-1" style={{ color: C.text }}>{value}</p>
+                  <p className="text-sm" style={{ color: 'var(--c7)' }}>{label}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </motion.div>
-
-        {/* Name */}
-        <motion.h1 variants={item} className="font-display font-bold tracking-tight leading-[1.04] mb-5" style={{ fontSize: 'clamp(52px,10vw,96px)' }}>
-          <span className="block" style={{ color: C.muted }}>Aditya</span>
-          <span className="block" style={{ color: C.text }}>Kumar Shaw</span>
-        </motion.h1>
-
-        {/* Typing */}
-        <motion.div variants={item} className="h-8 mb-5 flex items-center justify-center">
-          <span className="font-mono text-lg" style={{ color: C.faint }}>
-            {typed}
-            <span className="inline-block w-[2px] h-5 ml-0.5 align-middle animate-pulse" style={{ background: C.text }} />
-          </span>
-        </motion.div>
-
-        {/* Tagline */}
-        <motion.p variants={item} className="text-lg max-w-2xl mx-auto leading-relaxed mb-8" style={{ color: C.faint }}>
-          IT undergraduate building <span style={{ color: C.muted }}>modern web applications</span> with React and Node.js, and solving algorithmic problems through <span style={{ color: C.muted }}>DSA and competitive programming</span>.
-        </motion.p>
-
-        {/* ISRO achievement */}
-        <motion.div variants={item} className="mb-10 flex justify-center">
-          <a href="https://isrolms.iirs.gov.in/mod/customcert/my_certificates.php?userid=414294&certificateid=136&downloadcert=1"
-            target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2.5 text-xs px-5 py-2.5 rounded-xl font-mono transition-all duration-300 hover:scale-[1.02]"
-            style={{ background: 'rgba(var(--c1-rgb),0.05)', border: '1px solid rgba(var(--c1-rgb),0.18)', color: 'var(--c1)' }}>
-            <span style={{ fontSize: 16 }}>🛰️</span>
-            <span>ISRO / IIRS Certified &mdash; View Certificate ↗</span>
-          </a>
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4">
-          <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-7 py-3 rounded-xl font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
-            style={{ background: '#FBF3D1', color: '#0a0906' }}>
-            View Projects
-          </button>
-          <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-7 py-3 rounded-xl font-medium text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
-            style={{ border: '1px solid rgba(var(--ov-rgb),0.08)', color: C.dim, background: 'rgba(var(--ov-rgb),0.02)' }}>
-            Contact Me
-          </button>
-          <a href="https://drive.google.com/file/d/1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p/view?usp=sharing" target="_blank" rel="noreferrer" className="px-7 py-3 rounded-xl font-medium text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
-            style={{ border: '1px solid rgba(var(--ov-rgb),0.08)', color: C.dim, background: 'rgba(var(--ov-rgb),0.02)' }}>
-            Download CV ↓
-          </a>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div variants={item} className="mt-20 flex flex-col items-center gap-2">
-          <span className="text-xs tracking-widest uppercase font-mono" style={{ color: 'var(--c8)' }}>Scroll</span>
-          <div className="w-px h-12" style={{ background: 'linear-gradient(to bottom, var(--c8), transparent)' }} />
-        </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }
