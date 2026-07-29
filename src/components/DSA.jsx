@@ -26,12 +26,12 @@ export default function DSA() {
 
   return (
     <section id="dsa" className="py-28 px-6 relative overflow-hidden">
-      <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(251,243,209,0.02) 0%,transparent 70%)', filter: 'blur(80px)' }} />
+      <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(var(--c1-rgb),0.02) 0%,transparent 70%)', filter: 'blur(80px)' }} />
       <div className="max-w-5xl mx-auto" ref={ref}>
         <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
-          <motion.p variants={fadeUp} className="font-mono text-xs tracking-[0.25em] uppercase mb-4" style={{ color: '#B6AE9F' }}>04 / DSA</motion.p>
-          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: '#FBF3D1' }}>Algorithmic Thinking</motion.h2>
-          <motion.p variants={fadeUp} className="max-w-xl leading-relaxed mb-14" style={{ color: '#B6AE9F', fontSize: 15 }}>
+          <motion.p variants={fadeUp} className="font-mono text-xs tracking-[0.25em] uppercase mb-4" style={{ color: 'var(--c4)' }}>04 / DSA</motion.p>
+          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--c1)' }}>Algorithmic Thinking</motion.h2>
+          <motion.p variants={fadeUp} className="max-w-xl leading-relaxed mb-14" style={{ color: 'var(--c4)', fontSize: 15 }}>
             Data Structures & Algorithms form the backbone of my problem-solving approach. I practice regularly across multiple platforms to sharpen logic and prepare for top engineering roles.
           </motion.p>
 
@@ -39,26 +39,26 @@ export default function DSA() {
           <motion.div variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {dsaStats.map(({ value, label, sub }) => (
               <motion.div key={label} variants={fadeUp} className="p-6 rounded-2xl text-center transition-all duration-300"
-                style={{ border: '1px solid rgba(182,174,159,0.08)', background: 'rgba(182,174,159,0.02)' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(251,243,209,0.16)'; e.currentTarget.style.background = 'rgba(251,243,209,0.03)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(182,174,159,0.08)'; e.currentTarget.style.background = 'rgba(182,174,159,0.02)'; }}>
-                <p className="font-display text-3xl font-bold mb-1" style={{ color: '#FBF3D1' }}>{value}</p>
-                <p className="text-sm font-medium mb-1" style={{ color: '#C5C7BC' }}>{label}</p>
-                <p className="text-xs" style={{ color: '#2e2c2a' }}>{sub}</p>
+                style={{ border: '1px solid rgba(var(--c4-rgb),0.08)', background: 'rgba(var(--c4-rgb),0.02)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.16)'; e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.03)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(var(--c4-rgb),0.08)'; e.currentTarget.style.background = 'rgba(var(--c4-rgb),0.02)'; }}>
+                <p className="font-display text-3xl font-bold mb-1" style={{ color: 'var(--c1)' }}>{value}</p>
+                <p className="text-sm font-medium mb-1" style={{ color: 'var(--c3)' }}>{label}</p>
+                <p className="text-xs" style={{ color: 'var(--c9)' }}>{sub}</p>
               </motion.div>
             ))}
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Topics */}
-            <motion.div variants={fadeUp} className="p-7 rounded-2xl" style={{ border: '1px solid rgba(182,174,159,0.08)', background: 'rgba(182,174,159,0.02)' }}>
-              <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: '#3a3633' }}>Topics Covered</p>
+            <motion.div variants={fadeUp} className="p-7 rounded-2xl" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)', background: 'rgba(var(--c4-rgb),0.02)' }}>
+              <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--c6)' }}>Topics Covered</p>
               <div className="flex flex-wrap gap-2">
                 {topics.map(t => (
                   <span key={t} className="font-mono text-xs px-3 py-1.5 rounded-lg transition-all duration-200 cursor-default"
-                    style={{ background: 'rgba(251,243,209,0.03)', border: '1px solid rgba(251,243,209,0.07)', color: '#6b6560' }}
-                    onMouseEnter={e => { e.currentTarget.style.color = '#C5C7BC'; e.currentTarget.style.borderColor = 'rgba(251,243,209,0.18)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.color = '#6b6560'; e.currentTarget.style.borderColor = 'rgba(251,243,209,0.07)'; }}>
+                    style={{ background: 'rgba(var(--c1-rgb),0.03)', border: '1px solid rgba(var(--c1-rgb),0.07)', color: 'var(--c5)' }}
+                    onMouseEnter={e => { e.currentTarget.style.color = 'var(--c3)'; e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.18)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.color = 'var(--c5)'; e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.07)'; }}>
                     {t}
                   </span>
                 ))}
@@ -66,20 +66,20 @@ export default function DSA() {
             </motion.div>
 
             {/* Platforms */}
-            <motion.div variants={fadeUp} className="p-7 rounded-2xl" style={{ border: '1px solid rgba(182,174,159,0.08)', background: 'rgba(182,174,159,0.02)' }}>
-              <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: '#3a3633' }}>Platforms</p>
+            <motion.div variants={fadeUp} className="p-7 rounded-2xl" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)', background: 'rgba(var(--c4-rgb),0.02)' }}>
+              <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--c6)' }}>Platforms</p>
               <div className="flex flex-col gap-3">
                 {platforms.map(({ name, sub, href }) => (
                   <a key={name} href={href} target="_blank" rel="noreferrer"
                     className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200"
-                    style={{ border: '1px solid rgba(251,243,209,0.07)', background: 'rgba(251,243,209,0.02)' }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(251,243,209,0.18)'; e.currentTarget.style.transform = 'translateX(4px)'; e.currentTarget.style.background = 'rgba(251,243,209,0.04)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(251,243,209,0.07)'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.background = 'rgba(251,243,209,0.02)'; }}>
+                    style={{ border: '1px solid rgba(var(--c1-rgb),0.07)', background: 'rgba(var(--c1-rgb),0.02)' }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.18)'; e.currentTarget.style.transform = 'translateX(4px)'; e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.04)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.07)'; e.currentTarget.style.transform = 'none'; e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.02)'; }}>
                     <div>
-                      <p className="text-sm font-medium" style={{ color: '#DEDED1' }}>{name}</p>
-                      <p className="font-mono text-xs" style={{ color: '#3a3633' }}>{sub}</p>
+                      <p className="text-sm font-medium" style={{ color: 'var(--c2)' }}>{name}</p>
+                      <p className="font-mono text-xs" style={{ color: 'var(--c6)' }}>{sub}</p>
                     </div>
-                    <span className="ml-auto text-xs" style={{ color: '#2e2c2a' }}>↗</span>
+                    <span className="ml-auto text-xs" style={{ color: 'var(--c9)' }}>↗</span>
                   </a>
                 ))}
               </div>
@@ -88,9 +88,9 @@ export default function DSA() {
 
           {/* GitHub Stats */}
           <motion.div variants={fadeUp} className="mt-8">
-            <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: '#3a3633' }}>GitHub Activity</p>
+            <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--c6)' }}>GitHub Activity</p>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(182,174,159,0.08)' }}>
+              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
                 <img
                   src="https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=FBF3D1&icon_color=B6AE9F&text_color=C5C7BC&ring_color=B6AE9F"
                   alt="Aditya's GitHub stats"
@@ -98,7 +98,7 @@ export default function DSA() {
                   loading="lazy"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(182,174,159,0.08)' }}>
+              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
                 <img
                   src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=FBF3D1&text_color=C5C7BC"
                   alt="Aditya's top languages"
@@ -107,7 +107,7 @@ export default function DSA() {
                 />
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(182,174,159,0.08)' }}>
+            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
               <img
                 src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=FBF3D1&line=B6AE9F&point=FBF3D1&hide_border=true&area=true&area_color=B6AE9F"
                 alt="Aditya's GitHub contribution graph"
