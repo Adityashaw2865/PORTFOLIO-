@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const C = { text: '#FBF3D1', muted: '#DEDED1', dim: '#C5C7BC', faint: '#B6AE9F' }
+const C = { text: 'var(--c1)', muted: 'var(--c2)', dim: 'var(--c3)', faint: 'var(--c4)' }
 
 const commands = [
   { label: 'About', hint: 'Who I am', action: (nav) => nav('about') },
@@ -69,10 +69,10 @@ export default function CommandPalette() {
       <button
         onClick={() => setOpen(true)}
         className="fixed bottom-6 right-6 z-40 hidden md:flex items-center gap-2 px-3.5 py-2 rounded-xl font-mono text-xs transition-all duration-200 hover:scale-[1.03]"
-        style={{ background: 'rgba(182,174,159,0.05)', border: '1px solid rgba(182,174,159,0.12)', color: C.faint, backdropFilter: 'blur(10px)' }}
+        style={{ background: 'rgba(var(--c4-rgb),0.05)', border: '1px solid rgba(var(--c4-rgb),0.12)', color: C.faint, backdropFilter: 'blur(10px)' }}
       >
         <span>Search</span>
-        <kbd className="px-1.5 py-0.5 rounded" style={{ background: 'rgba(251,243,209,0.08)', color: C.text, fontSize: 10 }}>Ctrl K</kbd>
+        <kbd className="px-1.5 py-0.5 rounded" style={{ background: 'rgba(var(--c1-rgb),0.08)', color: C.text, fontSize: 10 }}>Ctrl K</kbd>
       </button>
 
       <AnimatePresence>
@@ -88,9 +88,9 @@ export default function CommandPalette() {
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
               className="w-full max-w-lg rounded-2xl overflow-hidden"
-              style={{ background: '#0d0c0a', border: '1px solid rgba(251,243,209,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
+              style={{ background: 'var(--bg2)', border: '1px solid rgba(var(--c1-rgb),0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
             >
-              <div className="flex items-center gap-3 px-5 py-4" style={{ borderBottom: '1px solid rgba(182,174,159,0.08)' }}>
+              <div className="flex items-center gap-3 px-5 py-4" style={{ borderBottom: '1px solid rgba(var(--c4-rgb),0.08)' }}>
                 <span style={{ color: C.faint }}>⌘</span>
                 <input
                   ref={inputRef}
@@ -101,12 +101,12 @@ export default function CommandPalette() {
                   className="flex-1 bg-transparent outline-none text-sm font-mono"
                   style={{ color: C.text }}
                 />
-                <kbd className="px-1.5 py-0.5 rounded font-mono" style={{ background: 'rgba(182,174,159,0.08)', color: C.faint, fontSize: 10 }}>Esc</kbd>
+                <kbd className="px-1.5 py-0.5 rounded font-mono" style={{ background: 'rgba(var(--c4-rgb),0.08)', color: C.faint, fontSize: 10 }}>Esc</kbd>
               </div>
 
               <div className="max-h-80 overflow-y-auto py-2">
                 {filtered.length === 0 && (
-                  <p className="text-center py-8 text-sm font-mono" style={{ color: '#4a4640' }}>No results found</p>
+                  <p className="text-center py-8 text-sm font-mono" style={{ color: 'var(--c7)' }}>No results found</p>
                 )}
                 {filtered.map((cmd, i) => (
                   <button
@@ -114,10 +114,10 @@ export default function CommandPalette() {
                     onClick={() => run(cmd)}
                     onMouseEnter={() => setSelected(i)}
                     className="w-full flex items-center justify-between px-5 py-3 text-left transition-colors duration-100"
-                    style={{ background: selected === i ? 'rgba(251,243,209,0.06)' : 'transparent' }}
+                    style={{ background: selected === i ? 'rgba(var(--c1-rgb),0.06)' : 'transparent' }}
                   >
                     <span className="text-sm" style={{ color: selected === i ? C.text : C.dim }}>{cmd.label}</span>
-                    <span className="text-xs font-mono" style={{ color: '#4a4640' }}>{cmd.hint}</span>
+                    <span className="text-xs font-mono" style={{ color: 'var(--c7)' }}>{cmd.hint}</span>
                   </button>
                 ))}
               </div>
