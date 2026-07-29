@@ -21,12 +21,12 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-28 px-6 relative">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-48 rounded-full pointer-events-none" style={{ background: 'radial-gradient(ellipse,rgba(251,243,209,0.03) 0%,transparent 70%)', filter: 'blur(40px)' }} />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-48 rounded-full pointer-events-none" style={{ background: 'radial-gradient(ellipse,rgba(var(--c1-rgb),0.03) 0%,transparent 70%)', filter: 'blur(40px)' }} />
       <div className="max-w-4xl mx-auto text-center" ref={ref}>
         <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
-          <motion.p variants={fadeUp} className="font-mono text-xs tracking-[0.25em] uppercase mb-4" style={{ color: '#B6AE9F' }}>05 / Contact</motion.p>
-          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-6" style={{ color: '#FBF3D1' }}>Let's Connect</motion.h2>
-          <motion.p variants={fadeUp} className="text-lg max-w-xl mx-auto leading-relaxed mb-14" style={{ color: '#B6AE9F' }}>
+          <motion.p variants={fadeUp} className="font-mono text-xs tracking-[0.25em] uppercase mb-4" style={{ color: 'var(--c4)' }}>05 / Contact</motion.p>
+          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-6" style={{ color: 'var(--c1)' }}>Let's Connect</motion.h2>
+          <motion.p variants={fadeUp} className="text-lg max-w-xl mx-auto leading-relaxed mb-14" style={{ color: 'var(--c4)' }}>
             Whether you have an internship opportunity, a collaboration idea, or just want to talk code — my inbox is always open.
           </motion.p>
 
@@ -34,12 +34,12 @@ export default function Contact() {
             {links.map(({ label, value, href, icon }) => (
               <motion.a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" variants={fadeUp}
                 className="group flex flex-col items-center p-7 rounded-2xl transition-all duration-300"
-                style={{ border: '1px solid rgba(182,174,159,0.08)', background: 'rgba(182,174,159,0.02)', textDecoration: 'none' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(251,243,209,0.2)'; e.currentTarget.style.background = 'rgba(251,243,209,0.04)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(182,174,159,0.08)'; e.currentTarget.style.background = 'rgba(182,174,159,0.02)'; e.currentTarget.style.transform = 'none'; }}>
-                <span className="mb-3" style={{ color: '#3a3633' }}>{icon}</span>
-                <span className="font-mono text-xs tracking-widest uppercase mb-2" style={{ color: '#3a3633' }}>{label}</span>
-                <span className="text-sm break-all" style={{ color: '#6b6560' }}>{value}</span>
+                style={{ border: '1px solid rgba(var(--c4-rgb),0.08)', background: 'rgba(var(--c4-rgb),0.02)', textDecoration: 'none' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.2)'; e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.04)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(var(--c4-rgb),0.08)'; e.currentTarget.style.background = 'rgba(var(--c4-rgb),0.02)'; e.currentTarget.style.transform = 'none'; }}>
+                <span className="mb-3" style={{ color: 'var(--c6)' }}>{icon}</span>
+                <span className="font-mono text-xs tracking-widest uppercase mb-2" style={{ color: 'var(--c6)' }}>{label}</span>
+                <span className="text-sm break-all" style={{ color: 'var(--c5)' }}>{value}</span>
               </motion.a>
             ))}
           </motion.div>
@@ -49,16 +49,16 @@ export default function Contact() {
             <a href="https://isrolms.iirs.gov.in/mod/customcert/my_certificates.php?userid=414294&certificateid=136&downloadcert=1"
               target="_blank" rel="noreferrer"
               className="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-mono text-sm transition-all duration-300 hover:scale-[1.02]"
-              style={{ background: 'rgba(251,243,209,0.05)', border: '1px solid rgba(251,243,209,0.2)', color: '#FBF3D1' }}>
+              style={{ background: 'rgba(var(--c1-rgb),0.05)', border: '1px solid rgba(var(--c1-rgb),0.2)', color: 'var(--c1)' }}>
               🛰️ &nbsp;ISRO / IIRS Certificate — Download ↓
             </a>
           </motion.div>
 
           <motion.a variants={fadeUp} href="mailto:aks09adi@gmail.com"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:scale-[1.02] active:scale-95"
-            style={{ background: 'rgba(251,243,209,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#FBF3D1', textDecoration: 'none' }}>
+            style={{ background: 'rgba(var(--c1-rgb),0.04)', border: '1px solid rgba(var(--ov-rgb),0.08)', color: 'var(--c1)', textDecoration: 'none' }}>
             <span>Say Hello</span>
-            <span style={{ color: '#FBF3D1' }}>→</span>
+            <span style={{ color: 'var(--c1)' }}>→</span>
           </motion.a>
         </motion.div>
       </div>
