@@ -22,7 +22,7 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, tra
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }
 
 const dsaStats = [
-  { value: '100+', label: 'LeetCode Solved', sub: 'Regular problem solving' },
+  { value: '200+', label: 'LeetCode Solved', sub: 'Regular problem solving' },
   { value: '400+', label: 'CodeChef Solved', sub: 'Competitive programming' },
   { value: 'C++', label: 'Primary Language', sub: 'STL & competitive use' },
   { value: 'Daily', label: 'Practice Cadence', sub: 'Consistent grind' },
