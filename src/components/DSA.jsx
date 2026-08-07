@@ -109,7 +109,7 @@ export default function DSA() {
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
                 <StatImage
-                  src="https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=FBF3D1&icon_color=B6AE9F&text_color=C5C7BC&ring_color=B6AE9F"
+                  src="https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=8B6F1F&icon_color=8B6F1F&text_color=5C5A52&ring_color=8B6F1F"
                   alt="Aditya's GitHub stats"
                   fallbackLabel="GitHub Stats"
                   fallbackHref="https://github.com/Adityashaw2865"
@@ -117,7 +117,7 @@ export default function DSA() {
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
                 <StatImage
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=FBF3D1&text_color=C5C7BC"
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=8B6F1F&text_color=5C5A52"
                   alt="Aditya's top languages"
                   fallbackLabel="Top Languages"
                   fallbackHref="https://github.com/Adityashaw2865"
@@ -126,7 +126,7 @@ export default function DSA() {
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
               <StatImage
-                src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=FBF3D1&line=B6AE9F&point=FBF3D1&hide_border=true&area=true&area_color=B6AE9F"
+                src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=8B6F1F&line=8B6F1F&point=8B6F1F&hide_border=true&area=true&area_color=B6AE9F"
                 alt="Aditya's GitHub contribution graph"
                 fallbackLabel="Contribution Graph"
                 fallbackHref="https://github.com/Adityashaw2865"
