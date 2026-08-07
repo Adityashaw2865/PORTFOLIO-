@@ -64,14 +64,28 @@ export default function Hero() {
           IT undergraduate building <span style={{ color: C.muted }}>modern web applications</span> with React and Node.js, and solving algorithmic problems through <span style={{ color: C.muted }}>DSA and competitive programming</span>.
         </motion.p>
 
-        {/* ISRO achievement */}
-        <motion.div variants={item} className="mb-10 flex justify-center">
+        {/* Achievement badges */}
+        <motion.div variants={item} className="mb-10 flex flex-wrap items-center justify-center gap-3">
           <a href="https://isrolms.iirs.gov.in/mod/customcert/my_certificates.php?userid=414294&certificateid=136&downloadcert=1"
             target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2.5 text-xs px-5 py-2.5 rounded-xl font-mono transition-all duration-300 hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 text-xs px-4 py-2 rounded-xl font-mono transition-all duration-300 hover:scale-[1.02]"
             style={{ background: 'rgba(var(--c1-rgb),0.05)', border: '1px solid rgba(var(--c1-rgb),0.18)', color: 'var(--c1)' }}>
-            <span style={{ fontSize: 16 }}>🛰️</span>
-            <span>ISRO / IIRS Certified &mdash; View Certificate ↗</span>
+            <span style={{ fontSize: 14 }}>🛰️</span>
+            <span>ISRO / IIRS Certified ↗</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1I2ADUzSTtPNdfkW8yBr5UnqmpOLlGIPg/view?usp=sharing"
+            target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-2 text-xs px-4 py-2 rounded-xl font-mono transition-all duration-300 hover:scale-[1.02]"
+            style={{ background: 'rgba(var(--c1-rgb),0.05)', border: '1px solid rgba(var(--c1-rgb),0.18)', color: 'var(--c1)' }}>
+            <span style={{ fontSize: 14 }}>🎓</span>
+            <span>NIT Jamshedpur Internship ↗</span>
+          </a>
+          <a href="https://www.elevanceskills.com/certificates/6a44bc41e3163d3253fc9ea1"
+            target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-2 text-xs px-4 py-2 rounded-xl font-mono transition-all duration-300 hover:scale-[1.02]"
+            style={{ background: 'rgba(var(--c1-rgb),0.05)', border: '1px solid rgba(var(--c1-rgb),0.18)', color: 'var(--c1)' }}>
+            <span style={{ fontSize: 14 }}>💻</span>
+            <span>Web Dev — Elevance Skills ↗</span>
           </a>
         </motion.div>
 
