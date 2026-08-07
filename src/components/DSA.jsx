@@ -1,3 +1,4 @@
+
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
@@ -35,6 +36,7 @@ const platforms = [
   { name: 'GeeksForGeeks', sub: 'Practice & articles', href: 'https://www.geeksforgeeks.org/profile/adityaxshaw' },
   { name: 'Codeforces', sub: 'Competitive rounds', href: 'https://codeforces.com/profile/Aditya_Xshaw' },
   { name: 'CodeChef', sub: '400+ solved', href: 'https://www.codechef.com/users/aditya_shaw09' },
+  { name: 'GitHub — Solutions', sub: 'LeetCode code repo', href: 'https://github.com/Adityashaw2865/Leetcode_Prectise' },
 ]
 
 export default function DSA() {
