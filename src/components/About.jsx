@@ -31,7 +31,7 @@ export default function About() {
                 <span style={{ color: C.muted, fontWeight: 600 }}>Jalpaiguri Government Engineering College</span>. Passionate about building web experiences and solving algorithmic challenges.
               </motion.p>
               <motion.p variants={fadeUp} className="leading-relaxed mb-8" style={{ color: C.faint, fontSize: 15 }}>
-                My journey spans full-stack apps with React & Node.js to competitive programming in C++. I've completed an <span style={{ color: C.dim }}>ML research internship at IIT Jharkhand</span> (fake news detection with BERT) and an <span style={{ color: C.dim }}>RPA Bootcamp at C-DAC Kolkata</span>, plus a certification from <span style={{ color: C.dim }}>ISRO's IIRS</span>.
+                My journey spans full-stack apps with React & Node.js to competitive programming in C++. I've completed an <span style={{ color: C.dim }}>ML research internship at NIT Jharkhand</span> (fake news detection with BERT) and an <span style={{ color: C.dim }}>RPA Bootcamp at C-DAC Kolkata</span>, plus a certification from <span style={{ color: C.dim }}>ISRO's IIRS</span>.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
                 {['Problem Solving', 'Full-Stack Dev', 'DSA', 'Machine Learning', 'Open Source', 'ISRO Certified'].map(tag => (
