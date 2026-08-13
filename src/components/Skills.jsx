@@ -1,9 +1,9 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
-  SiCplusplus, SiPython, SiJavascript, SiReact, SiHtml5, SiCss3,
-  SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb,
-  SiGit, SiGithub, SiPostman, SiNpm, SiFigma
+  SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss,
+  SiNodedotjs, SiExpress, SiMongodb, SiDocker,
+  SiGit, SiAmazonaws, SiReact
 } from 'react-icons/si'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } } }
@@ -18,21 +18,17 @@ const skillGroups = [
 ]
 
 const iconStack = [
-  { icon: SiCplusplus, name: 'C++' },
-  { icon: SiPython, name: 'Python' },
+  { icon: SiNextdotjs, name: 'Next.js' },
+  { icon: SiTypescript, name: 'TypeScript' },
   { icon: SiJavascript, name: 'JavaScript' },
-  { icon: SiReact, name: 'React' },
-  { icon: SiHtml5, name: 'HTML5' },
-  { icon: SiCss3, name: 'CSS3' },
   { icon: SiTailwindcss, name: 'Tailwind' },
   { icon: SiNodedotjs, name: 'Node.js' },
   { icon: SiExpress, name: 'Express' },
   { icon: SiMongodb, name: 'MongoDB' },
+  { icon: SiDocker, name: 'Docker' },
   { icon: SiGit, name: 'Git' },
-  { icon: SiGithub, name: 'GitHub' },
-  { icon: SiPostman, name: 'Postman' },
-  { icon: SiNpm, name: 'npm' },
-  { icon: SiFigma, name: 'Figma' },
+  { icon: SiAmazonaws, name: 'AWS' },
+  { icon: SiReact, name: 'React' },
 ]
 
 function SkillBar({ name, level }) {
@@ -96,6 +92,9 @@ export default function Skills() {
           </motion.div>
         </motion.div>
       </div>
+    </section>
+  )
+}
     </section>
   )
 }
