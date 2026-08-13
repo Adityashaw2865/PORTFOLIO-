@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import {
   SiCplusplus, SiPython, SiJavascript, SiReact, SiHtml5, SiCss3,
   SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb,
-  SiGit, SiGithub, SiVisualstudiocode
+  SiGit, SiGithub, SiVisualstudiocode, SiPostman, SiNpm, SiFigma, SiVercel
 } from 'react-icons/si'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } } }
@@ -31,6 +31,10 @@ const iconStack = [
   { icon: SiGit, name: 'Git' },
   { icon: SiGithub, name: 'GitHub' },
   { icon: SiVisualstudiocode, name: 'VS Code' },
+  { icon: SiPostman, name: 'Postman' },
+  { icon: SiNpm, name: 'npm' },
+  { icon: SiFigma, name: 'Figma' },
+  { icon: SiVercel, name: 'Vercel' },
 ]
 
 function SkillBar({ name, level }) {
