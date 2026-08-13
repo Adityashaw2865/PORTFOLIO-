@@ -1,5 +1,10 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import {
+  SiCplusplus, SiPython, SiJavascript, SiReact, SiHtml5, SiCss3,
+  SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb,
+  SiGit, SiGithub, SiVisualstudiocode
+} from 'react-icons/si'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } } }
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }
@@ -10,6 +15,22 @@ const skillGroups = [
   { category: 'Backend', items: [{ name: 'Node.js', level: 72 }, { name: 'Express.js', level: 70 }, { name: 'MongoDB', level: 68 }] },
   { category: 'ML / AI', items: [{ name: 'BERT / Transformers', level: 65 }, { name: 'PyTorch', level: 55 }, { name: 'Scikit-learn', level: 60 }] },
   { category: 'Tools', items: [{ name: 'Git', level: 80 }, { name: 'GitHub', level: 82 }, { name: 'VS Code', level: 90 }, { name: 'UiPath (RPA)', level: 55 }] },
+]
+
+const iconStack = [
+  { icon: SiCplusplus, name: 'C++' },
+  { icon: SiPython, name: 'Python' },
+  { icon: SiJavascript, name: 'JavaScript' },
+  { icon: SiReact, name: 'React' },
+  { icon: SiHtml5, name: 'HTML5' },
+  { icon: SiCss3, name: 'CSS3' },
+  { icon: SiTailwindcss, name: 'Tailwind' },
+  { icon: SiNodedotjs, name: 'Node.js' },
+  { icon: SiExpress, name: 'Express' },
+  { icon: SiMongodb, name: 'MongoDB' },
+  { icon: SiGit, name: 'Git' },
+  { icon: SiGithub, name: 'GitHub' },
+  { icon: SiVisualstudiocode, name: 'VS Code' },
 ]
 
 function SkillBar({ name, level }) {
@@ -55,6 +76,20 @@ export default function Skills() {
                 <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--c7)' }}>{category}</p>
                 {items.map(s => <SkillBar key={s.name} name={s.name} level={s.level} />)}
               </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="mt-16 flex flex-wrap items-center justify-center gap-8">
+            {iconStack.map(({ icon: Icon, name }) => (
+              <div key={name} className="flex flex-col items-center gap-2 group cursor-default">
+                <Icon
+                  className="transition-all duration-300 group-hover:scale-110"
+                  style={{ fontSize: 36, color: 'var(--c4)' }}
+                />
+                <span className="text-[10px] font-mono uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: 'var(--c6)' }}>
+                  {name}
+                </span>
+              </div>
             ))}
           </motion.div>
         </motion.div>
