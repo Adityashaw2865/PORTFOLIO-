@@ -101,7 +101,7 @@ export default function Hero() {
             style={{ border: '1px solid rgba(var(--ov-rgb),0.08)', color: C.dim, background: 'rgba(var(--ov-rgb),0.02)' }}>
             Contact Me
           </button>
-          <a href="https://drive.google.com/file/d/1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p/view?usp=sharing" target="_blank" rel="noreferrer" className="px-7 py-3 rounded-xl font-medium text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
+          <a href="https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p" target="_blank" rel="noreferrer" className="px-7 py-3 rounded-xl font-medium text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
             style={{ border: '1px solid rgba(var(--ov-rgb),0.08)', color: C.dim, background: 'rgba(var(--ov-rgb),0.02)' }}>
             Download CV ↓
           </a>
