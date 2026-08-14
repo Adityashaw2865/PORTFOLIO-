@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import {
   SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss,
   SiNodedotjs, SiExpress, SiMongodb, SiDocker,
-  SiGit, SiAmazonaws, SiReact
+  SiGit, SiReact
 } from 'react-icons/si'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } } }
@@ -27,7 +27,6 @@ const iconStack = [
   { icon: SiMongodb, name: 'MongoDB' },
   { icon: SiDocker, name: 'Docker' },
   { icon: SiGit, name: 'Git' },
-  { icon: SiAmazonaws, name: 'AWS' },
   { icon: SiReact, name: 'React' },
 ]
 
