@@ -7,24 +7,15 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.14 } }
 const projects = [
   {
     num: '01',
-    title: 'YouTube Clone',
-    desc: 'A full-stack YouTube clone — video feed, channel pages, comments & search, with a custom REST API backend handling auth and data.',
-    highlight: 'Full auth + REST API built from scratch',
-    tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
-    github: null,
-    demo: null,
+    title: 'Portfolio Website',
+    desc: 'A modern, animated personal portfolio built with React, Tailwind CSS, and Framer Motion — featuring a command palette, theme toggle, and smooth scroll-based interactions.',
+    highlight: 'Command palette (Ctrl+K) + dark/light theme',
+    tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+    github: 'https://github.com/Adityashaw2865/PORTFOLIO',
+    demo: 'https://adityaxshaw-portfolio.vercel.app/',
   },
   {
     num: '02',
-    title: 'AI Agent Orchestration Backend',
-    desc: 'A backend that orchestrates multiple AI agents on top of the Claude API — routing tasks and managing multi-step agent workflows.',
-    highlight: 'Multi-agent task routing on Claude API',
-    tags: ['Node.js', 'Express', 'Claude API', 'MongoDB'],
-    github: null,
-    demo: null,
-  },
-  {
-    num: '03',
     title: 'TaskFlow',
     desc: 'A MERN task tracker with full CRUD, real-time debounced search, filter/sort by status & priority, and a live stats dashboard.',
     highlight: 'Live dashboard with debounced real-time search',
@@ -33,7 +24,7 @@ const projects = [
     demo: 'https://taskflow-ochre-kappa.vercel.app/',
   },
   {
-    num: '04',
+    num: '03',
     title: 'Fake News Detection',
     desc: 'Research project comparing classical ML (LR, SVM, XGBoost) against fine-tuned BERT on the WELFake dataset (72k articles) — BERT hit ~99.2% accuracy. Built during my ML internship at IIT Jharkhand.',
     highlight: '99.2% accuracy on 72k-article dataset',
@@ -42,7 +33,7 @@ const projects = [
     demo: null,
   },
   {
-    num: '05',
+    num: '04',
     title: 'Ganga Aarti — Ramkrishnapur Ghat',
     desc: 'A live, bilingual (English/Hindi) static site for the Ganga Aarti at Ramkrishnapur Ghat, Howrah — one of my earliest deployed projects.',
     highlight: 'Bilingual, live in production',
@@ -51,7 +42,7 @@ const projects = [
     demo: 'https://ganga-arati.vercel.app/',
   },
   {
-    num: '06',
+    num: '05',
     title: 'Focusly',
     desc: 'A daily task tracker built to eliminate distraction — featuring clean task management, progress charts, and a minimal UI that keeps you in flow state.',
     highlight: 'Streak tracking + analytics heatmaps',
