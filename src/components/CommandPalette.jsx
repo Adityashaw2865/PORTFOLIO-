@@ -9,7 +9,7 @@ const commands = [
   { label: 'Projects', hint: 'Featured work', action: (nav) => nav('projects') },
   { label: 'DSA', hint: 'Algorithmic thinking', action: (nav) => nav('dsa') },
   { label: 'Contact', hint: "Let's connect", action: (nav) => nav('contact') },
-  { label: 'Resume', hint: 'Download CV (PDF)', action: () => window.open('https://drive.google.com/file/d/1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p/view?usp=sharing', '_blank') },
+  { label: 'Resume', hint: 'Download CV (PDF)', action: () => window.open('https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p', '_blank') },
   { label: 'GitHub', hint: 'github.com/Adityashaw2865', action: () => window.open('https://github.com/Adityashaw2865', '_blank') },
   { label: 'LinkedIn', hint: 'Connect on LinkedIn', action: () => window.open('https://www.linkedin.com/in/aditya-kumar-shaw-481735326', '_blank') },
   { label: 'Email', hint: 'aks09adi@gmail.com', action: () => window.open('mailto:aks09adi@gmail.com', '_blank') },
