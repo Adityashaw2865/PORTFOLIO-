@@ -1,8 +1,8 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
-  SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss,
-  SiNodedotjs, SiExpress, SiMongodb, SiDocker,
+  SiJavascript, SiTailwindcss,
+  SiNodedotjs, SiExpress, SiMongodb,
   SiGit, SiReact
 } from 'react-icons/si'
 
@@ -18,14 +18,11 @@ const skillGroups = [
 ]
 
 const iconStack = [
-  { icon: SiNextdotjs, name: 'Next.js' },
-  { icon: SiTypescript, name: 'TypeScript' },
   { icon: SiJavascript, name: 'JavaScript' },
   { icon: SiTailwindcss, name: 'Tailwind' },
   { icon: SiNodedotjs, name: 'Node.js' },
   { icon: SiExpress, name: 'Express' },
   { icon: SiMongodb, name: 'MongoDB' },
-  { icon: SiDocker, name: 'Docker' },
   { icon: SiGit, name: 'Git' },
   { icon: SiReact, name: 'React' },
 ]
