@@ -63,7 +63,7 @@ export default function Navbar() {
             )
           })}
           <li>
-            <a href="https://drive.google.com/file/d/1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p/view?usp=sharing" target="_blank" rel="noreferrer" className="text-sm px-4 py-2 rounded-lg transition-all duration-200 font-mono"
+            <a href="https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p" target="_blank" rel="noreferrer" className="text-sm px-4 py-2 rounded-lg transition-all duration-200 font-mono"
               style={{ border: '1px solid rgba(var(--c1-rgb),0.2)', color: 'var(--c1)', background: 'transparent' }}
               onMouseEnter={e => e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.06)'}
               onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
