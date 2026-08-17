@@ -1,3 +1,4 @@
+
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
@@ -49,6 +50,15 @@ const projects = [
     tags: ['React', 'Vite', 'Recharts', 'Lucide React'],
     github: 'https://github.com/Adityashaw2865/focusly',
     demo: 'https://focusly-lilac.vercel.app/',
+  },
+  {
+    num: '06',
+    title: 'Inkline',
+    desc: 'A full-stack blog platform with JWT-based auth, category tagging, likes, and a nested comment system — built on a clean MERN backend with a lightweight Vite + React frontend.',
+    highlight: 'Secure auth + likes/comments system',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    github: 'https://github.com/Adityashaw2865/inkline-blog',
+    demo: 'https://inkline-blog.vercel.app/',
   },
 ]
 
