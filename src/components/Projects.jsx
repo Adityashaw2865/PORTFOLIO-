@@ -12,7 +12,7 @@ const projects = [
     desc: 'A modern, animated personal portfolio built with React, Tailwind CSS, and Framer Motion — featuring a command palette, theme toggle, and smooth scroll-based interactions.',
     highlight: 'Command palette (Ctrl+K) + dark/light theme',
     tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
-    github: 'https://github.com/Adityashaw2865/PORTFOLIO',
+    github: 'https://github.com/Adityashaw2865/PORTFOLIO-',
     demo: 'https://adityaxshaw-portfolio.vercel.app/',
   },
   {
