@@ -1,99 +1,80 @@
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { SiGithub, SiGmail, SiLeetcode } from 'react-icons/si'
+import { FaLinkedin } from 'react-icons/fa'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+const C = { text: 'var(--c1)', muted: 'var(--c2)', dim: 'var(--c3)', faint: 'var(--c4)' }
 
-const links = ['About', 'Skills', 'Projects', 'DSA', 'Contact']
+const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }
+const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [active, setActive] = useState('')
+const socials = [
+  { icon: SiGithub, label: 'GitHub', sub: 'github.com/Adityashaw2865', href: 'https://github.com/Adityashaw2865' },
+  { icon: FaLinkedin, label: 'LinkedIn', sub: 'Connect with me', href: 'https://www.linkedin.com/in/aditya-kumar-shaw-481735326' },
+  { icon: SiGmail, label: 'Email', sub: 'aks09adi@gmail.com', href: 'mailto:aks09adi@gmail.com' },
+  { icon: SiLeetcode, label: 'LeetCode', sub: '200+ problems solved', href: 'https://leetcode.com/u/Aditya_shaw2006/' },
+]
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    const sections = links.map(l => document.getElementById(l.toLowerCase())).filter(Boolean)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id)
-        })
-      },
-      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
-    )
-    sections.forEach(s => observer.observe(s))
-    return () => observer.disconnect()
-  }, [])
-
-  const scrollTo = (id) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })
-    setMenuOpen(false)
-  }
+export default function Contact() {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-3' : 'py-5'}`}
-      style={{ background: scrolled ? 'rgba(var(--bg-rgb),0.85)' : 'transparent', backdropFilter: scrolled ? 'blur(20px)' : 'none', borderBottom: scrolled ? '1px solid rgba(var(--c4-rgb),0.08)' : '1px solid transparent' }}
-    >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="font-display text-lg font-semibold tracking-tight" style={{ color: 'var(--c1)', background: 'none', border: 'none', cursor: 'pointer' }}>
-          <span style={{ color: 'var(--c4)' }}>A</span>ditya<span style={{ color: 'var(--c4)' }}>.</span>
-        </button>
+    <section id="contact" className="py-28 px-6 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(var(--c1-rgb),0.03) 0%,transparent 70%)', filter: 'blur(80px)' }} />
+      <div className="max-w-5xl mx-auto relative" ref={ref}>
+        <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
+          <motion.p variants={fadeUp} className="text-xs tracking-[0.25em] uppercase font-mono mb-4" style={{ color: C.faint }}>05 / Contact</motion.p>
+          <motion.h2 variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-5" style={{ color: C.text }}>Let's Connect</motion.h2>
+          <motion.p variants={fadeUp} className="max-w-xl leading-relaxed mb-14" style={{ color: C.faint, fontSize: 15 }}>
+            Open to internships, full-stack roles, and interesting collaborations. Reach out through any of these — I usually reply within a day.
+          </motion.p>
 
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map((link) => {
-            const isActive = active === link.toLowerCase()
-            return (
-              <li key={link}>
-                <button onClick={() => scrollTo(link)} className="relative text-sm tracking-wide transition-colors duration-200 pb-1" style={{ background: 'none', border: 'none', cursor: 'pointer', color: isActive ? 'var(--c1)' : 'var(--c5)' }}
-                  onMouseEnter={e => { if (!isActive) e.target.style.color = 'var(--c2)' }}
-                  onMouseLeave={e => { if (!isActive) e.target.style.color = 'var(--c5)' }}>
-                  {link}
-                  {isActive && (
-                    <motion.span layoutId="nav-underline" className="absolute left-0 right-0 -bottom-0.5 h-[1.5px]" style={{ background: '#FBF3D1' }} />
-                  )}
-                </button>
-              </li>
-            )
-          })}
-          <li>
-            <a href="https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p" target="_blank" rel="noreferrer" className="text-sm px-4 py-2 rounded-lg transition-all duration-200 font-mono"
-              style={{ border: '1px solid rgba(var(--c1-rgb),0.2)', color: 'var(--c1)', background: 'transparent' }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.06)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
-              Resume
-            </a>
-          </li>
-        </ul>
-
-        <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen(!menuOpen)}>
-          <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: 'var(--c4)', transform: menuOpen ? 'rotate(45deg) translateY(8px)' : 'none' }} />
-          <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: 'var(--c4)', opacity: menuOpen ? 0 : 1 }} />
-          <span className="block w-5 h-0.5 transition-all duration-300" style={{ background: 'var(--c4)', transform: menuOpen ? 'rotate(-45deg) translateY(-8px)' : 'none' }} />
-        </button>
-      </div>
-
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
-            style={{ background: 'rgba(var(--bg2-rgb),0.95)', backdropFilter: 'blur(20px)', borderTop: '1px solid rgba(var(--c4-rgb),0.08)' }}>
-            <ul className="flex flex-col py-4 px-6 gap-4">
-              {links.map((link) => (
-                <li key={link}>
-                  <button onClick={() => scrollTo(link)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--c3)', fontSize: 14 }}>{link}</button>
-                </li>
-              ))}
-            </ul>
+          <motion.div variants={stagger} className="grid sm:grid-cols-2 gap-4 mb-10">
+            {socials.map(({ icon: Icon, label, sub, href }) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                variants={fadeUp}
+                className="flex items-center gap-4 p-5 rounded-2xl transition-all duration-300"
+                style={{ border: '1px solid rgba(var(--c4-rgb),0.1)', background: 'rgba(var(--c4-rgb),0.02)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(var(--c1-rgb),0.18)'; e.currentTarget.style.background = 'rgba(var(--c1-rgb),0.04)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(var(--c4-rgb),0.1)'; e.currentTarget.style.background = 'rgba(var(--c4-rgb),0.02)'; e.currentTarget.style.transform = 'none' }}
+              >
+                <div className="flex items-center justify-center w-11 h-11 rounded-xl shrink-0" style={{ background: 'rgba(var(--c1-rgb),0.06)' }}>
+                  <Icon style={{ fontSize: 20, color: 'var(--c1)' }} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-medium" style={{ color: C.muted }}>{label}</p>
+                  <p className="font-mono text-xs truncate" style={{ color: 'var(--c7)' }}>{sub}</p>
+                </div>
+                <span className="ml-auto text-xs shrink-0" style={{ color: 'var(--c9)' }}>↗</span>
+              </motion.a>
+            ))}
           </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+            
+              href="mailto:aks09adi@gmail.com"
+              className="px-7 py-3 rounded-xl font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
+              style={{ background: '#FBF3D1', color: '#0a0906' }}
+            >
+              Say Hello ↗
+            </a>
+            
+              href="https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p"
+              target="_blank"
+              rel="noreferrer"
+              className="px-7 py-3 rounded-xl font-medium text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
+              style={{ border: '1px solid rgba(var(--ov-rgb),0.08)', color: C.dim, background: 'rgba(var(--ov-rgb),0.02)' }}
+            >
+              Download CV ↓
+            </a>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
   )
 }
