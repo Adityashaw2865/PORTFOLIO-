@@ -30,7 +30,7 @@ const projects = [
     desc: 'Research project comparing classical ML (LR, SVM, XGBoost) against fine-tuned BERT on the WELFake dataset (72k articles) — BERT hit ~99.2% accuracy. Built during my ML internship at IIT Jharkhand.',
     highlight: '99.2% accuracy on 72k-article dataset',
     tags: ['Python', 'BERT', 'PyTorch', 'XGBoost', 'Streamlit'],
-    github: 'https://github.com/Adityashaw2865/fake-news-detector',
+    github: null,
     demo: null,
   },
   {
