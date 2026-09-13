@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import StockGraph from './StockGraph'
 
 function StatImage({ src, alt, fallbackLabel, fallbackHref }) {
   const [failed, setFailed] = useState(false)
@@ -103,6 +104,11 @@ export default function DSA() {
               </div>
             </motion.div>
           </div>
+
+          {/* Stock-style progress graph */}
+          <motion.div variants={fadeUp} className="mt-8">
+            <StockGraph />
+          </motion.div>
 
           {/* GitHub Stats */}
           <motion.div variants={fadeUp} className="mt-8">
