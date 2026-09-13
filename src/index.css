@@ -22,13 +22,13 @@
   --c9: #2e2c2a;
   --c10: #9e9a94;
 
-  /* Chart palette — dark (vivid teal line + clear green/red, fintech style) */
-  --chart-line: #2DD4BF;      --chart-line-rgb: 45,212,191;
-  --chart-up: #22C55E;        --chart-up-rgb: 34,197,94;
-  --chart-down: #F43F5E;      --chart-down-rgb: 244,63,94;
-  --chart-grid-rgb: 182,174,159;
+  /* Chart palette — dark (sage/slate) */
+  --chart-line: #CAD2C5;      --chart-line-rgb: 202,210,197;
+  --chart-up: #84A98C;        --chart-up-rgb: 132,169,140;
+  --chart-down: #B3695C;      --chart-down-rgb: 179,105,92;
+  --chart-grid-rgb: 82,121,111;
 
-  --gh-graph-color: 2DD4BF;
+  --gh-graph-color: CAD2C5;
   --gh-graph-title: DEDED1;
   --gh-graph-text: B6AE9F;
 }
@@ -51,13 +51,13 @@
   --c9: #D8D0BE;
   --c10: #625C4F;
 
-  /* Chart palette — light (deep teal line + clear green/red, fintech style) */
-  --chart-line: #0F766E;      --chart-line-rgb: 15,118,110;
-  --chart-up: #15803D;        --chart-up-rgb: 21,128,61;
-  --chart-down: #DC2626;      --chart-down-rgb: 220,38,38;
-  --chart-grid-rgb: 120,110,81;
+  /* Chart palette — light (sage/slate) */
+  --chart-line: #2F3E46;      --chart-line-rgb: 47,62,70;
+  --chart-up: #354F52;        --chart-up-rgb: 53,79,82;
+  --chart-down: #8C4A3F;      --chart-down-rgb: 140,74,63;
+  --chart-grid-rgb: 82,121,111;
 
-  --gh-graph-color: 0F766E;
+  --gh-graph-color: 2F3E46;
   --gh-graph-title: 1A1710;
   --gh-graph-text: 423E35;
 }
