@@ -45,9 +45,8 @@ export default function DSA() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
   const theme = useTheme()
 
-  // Colors read from CSS vars per theme, passed as hex (no #) into the stat image query params
   const isDark = theme === 'dark'
-  const ghColor = isDark ? '7DA6C9' : '2E5A82'
+  const ghColor = isDark ? '2DD4BF' : '0F766E'
   const ghTitle = isDark ? 'DEDED1' : '1A1710'
   const ghText = isDark ? 'B6AE9F' : '423E35'
 
