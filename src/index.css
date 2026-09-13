@@ -21,6 +21,12 @@
   --c8: #2a2826;                           /* decorative faint */
   --c9: #2e2c2a;                           /* decorative faint 2 */
   --c10: #9e9a94;                          /* project description text */
+
+  /* Chart palette — dark */
+  --chart-line: #D4AF6A;      --chart-line-rgb: 212,175,106;
+  --chart-up: #34D399;        --chart-up-rgb: 52,211,153;
+  --chart-down: #F87171;      --chart-down-rgb: 248,113,113;
+  --chart-grid-rgb: 182,174,159;
 }
 
 [data-theme="light"] {
@@ -40,6 +46,12 @@
   --c8: #DED7C6;
   --c9: #D8D0BE;
   --c10: #625C4F;
+
+  /* Chart palette — light */
+  --chart-line: #8B6F1F;      --chart-line-rgb: 139,111,31;
+  --chart-up: #059669;        --chart-up-rgb: 5,150,105;
+  --chart-down: #DC2626;      --chart-down-rgb: 220,38,38;
+  --chart-grid-rgb: 120,110,81;
 }
 
 @layer base {
