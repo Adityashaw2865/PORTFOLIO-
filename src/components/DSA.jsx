@@ -1,4 +1,3 @@
-
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
@@ -126,9 +125,9 @@ export default function DSA() {
                 />
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
+            <div className="rounded-2xl overflow-hidden p-4" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
               <StatImage
-                src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=8B6F1F&line=8B6F1F&point=8B6F1F&hide_border=true&area=true&area_color=B6AE9F"
+                src="https://ghchart.rshah.org/8B6F1F/Adityashaw2865"
                 alt="Aditya's GitHub contribution graph"
                 fallbackLabel="Contribution Graph"
                 fallbackHref="https://github.com/Adityashaw2865"
