@@ -11,25 +11,24 @@
   --bg2-rgb: 10,9,6;
   --ov-rgb: 255,255,255;
 
-  --c1: #FBF3D1; --c1-rgb: 251,243,209;   /* headings / primary text */
-  --c2: #DEDED1;                           /* muted text */
-  --c3: #C5C7BC; --c3-rgb: 197,199,188;    /* dim text */
-  --c4: #B6AE9F; --c4-rgb: 182,174,159;    /* faint / secondary accent */
-  --c5: #6b6560;                           /* nav inactive */
-  --c6: #3a3633;                           /* subtle labels */
-  --c7: #4a4640;                           /* muted labels */
-  --c8: #2a2826;                           /* decorative faint */
-  --c9: #2e2c2a;                           /* decorative faint 2 */
-  --c10: #9e9a94;                          /* project description text */
+  --c1: #FBF3D1; --c1-rgb: 251,243,209;
+  --c2: #DEDED1;
+  --c3: #C5C7BC; --c3-rgb: 197,199,188;
+  --c4: #B6AE9F; --c4-rgb: 182,174,159;
+  --c5: #6b6560;
+  --c6: #3a3633;
+  --c7: #4a4640;
+  --c8: #2a2826;
+  --c9: #2e2c2a;
+  --c10: #9e9a94;
 
-  /* Chart palette — dark (professional slate/blue) */
-  --chart-line: #7DA6C9;      --chart-line-rgb: 125,166,201;
-  --chart-up: #4FAE8C;        --chart-up-rgb: 79,174,140;
-  --chart-down: #C77B6E;      --chart-down-rgb: 199,123,110;
+  /* Chart palette — dark (vivid teal line + clear green/red, fintech style) */
+  --chart-line: #2DD4BF;      --chart-line-rgb: 45,212,191;
+  --chart-up: #22C55E;        --chart-up-rgb: 34,197,94;
+  --chart-down: #F43F5E;      --chart-down-rgb: 244,63,94;
   --chart-grid-rgb: 182,174,159;
 
-  /* GitHub contribution graph line colors (dark) */
-  --gh-graph-color: 7DA6C9;
+  --gh-graph-color: 2DD4BF;
   --gh-graph-title: DEDED1;
   --gh-graph-text: B6AE9F;
 }
@@ -52,14 +51,13 @@
   --c9: #D8D0BE;
   --c10: #625C4F;
 
-  /* Chart palette — light (professional slate/blue) */
-  --chart-line: #2E5A82;      --chart-line-rgb: 46,90,130;
-  --chart-up: #1E7A5C;        --chart-up-rgb: 30,122,92;
-  --chart-down: #A8402F;      --chart-down-rgb: 168,64,47;
+  /* Chart palette — light (deep teal line + clear green/red, fintech style) */
+  --chart-line: #0F766E;      --chart-line-rgb: 15,118,110;
+  --chart-up: #15803D;        --chart-up-rgb: 21,128,61;
+  --chart-down: #DC2626;      --chart-down-rgb: 220,38,38;
   --chart-grid-rgb: 120,110,81;
 
-  /* GitHub contribution graph line colors (light) */
-  --gh-graph-color: 2E5A82;
+  --gh-graph-color: 0F766E;
   --gh-graph-title: 1A1710;
   --gh-graph-text: 423E35;
 }
@@ -91,7 +89,6 @@
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -106,7 +103,6 @@
   background: var(--c7);
 }
 
-/* Selection color */
 ::selection {
   background: rgba(var(--c1-rgb), 0.15);
   color: var(--c1);
