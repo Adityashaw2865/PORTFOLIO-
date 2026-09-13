@@ -22,7 +22,7 @@ export default function StockGraph() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
   const [hoverIdx, setHoverIdx] = useState(null)
   const [monthlyData, setMonthlyData] = useState(null)
-  const [status, setStatus] = useState('loading') // loading | ok | error
+  const [status, setStatus] = useState('loading')
 
   useEffect(() => {
     let cancelled = false
@@ -33,7 +33,6 @@ export default function StockGraph() {
         const json = await res.json()
         const days = json.contributions || []
 
-        // Aggregate daily contributions into monthly totals
         const totals = {}
         days.forEach(d => {
           const key = monthKey(d.date)
@@ -41,7 +40,6 @@ export default function StockGraph() {
         })
 
         const sortedKeys = Object.keys(totals).sort()
-        // Keep the last 12 months only
         const last12 = sortedKeys.slice(-12)
         const result = last12.map(key => ({ label: monthLabel(key), value: totals[key] }))
 
@@ -111,7 +109,6 @@ export default function StockGraph() {
     <div ref={ref} className="rounded-2xl p-6 overflow-hidden relative"
       style={{ border: '1px solid rgba(var(--c4-rgb),0.08)', background: 'rgba(var(--c4-rgb),0.02)' }}>
 
-      {/* Header: current value + growth badge, like a stock ticker */}
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <div>
           <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--c6)' }}>
@@ -132,7 +129,6 @@ export default function StockGraph() {
         </span>
       </div>
 
-      {/* The chart */}
       <div style={{ width: '100%', overflowX: 'auto' }}>
         <svg
           viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
@@ -147,7 +143,6 @@ export default function StockGraph() {
             </linearGradient>
           </defs>
 
-          {/* horizontal grid lines */}
           {[0, 1, 2, 3].map(i => (
             <line key={i}
               x1={PAD_X} x2={WIDTH - PAD_X}
@@ -157,7 +152,6 @@ export default function StockGraph() {
             />
           ))}
 
-          {/* animated area fill */}
           <motion.path
             d={areaPath}
             fill="url(#stockFill)"
@@ -166,7 +160,6 @@ export default function StockGraph() {
             transition={{ duration: 0.8, delay: 0.4 }}
           />
 
-          {/* animated line draw, like a stock ticker plotting itself */}
           <motion.path
             d={linePath}
             fill="none"
@@ -179,7 +172,6 @@ export default function StockGraph() {
             transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           />
 
-          {/* hover targets + dots */}
           {points.map((p, i) => (
             <g key={i}>
               <circle
@@ -202,7 +194,6 @@ export default function StockGraph() {
             </g>
           ))}
 
-          {/* x-axis month labels */}
           {points.map((p, i) => (
             <text
               key={i}
