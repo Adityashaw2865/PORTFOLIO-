@@ -56,20 +56,10 @@ export default function Contact() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
-            
-              href="mailto:aks09adi@gmail.com"
-              className="px-7 py-3 rounded-xl font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
-              style={{ background: '#FBF3D1', color: '#0a0906' }}
-            >
+            <a href="mailto:aks09adi@gmail.com" className="px-7 py-3 rounded-xl font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95" style={{ background: '#FBF3D1', color: '#0a0906' }}>
               Say Hello ↗
             </a>
-            
-              href="https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p"
-              target="_blank"
-              rel="noreferrer"
-              className="px-7 py-3 rounded-xl font-medium text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95"
-              style={{ border: '1px solid rgba(var(--ov-rgb),0.08)', color: C.dim, background: 'rgba(var(--ov-rgb),0.02)' }}
-            >
+            <a href="https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p" target="_blank" rel="noreferrer" className="px-7 py-3 rounded-xl font-medium text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-95" style={{ border: '1px solid rgba(var(--ov-rgb),0.08)', color: C.dim, background: 'rgba(var(--ov-rgb),0.02)' }}>
               Download CV ↓
             </a>
           </motion.div>
