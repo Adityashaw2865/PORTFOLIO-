@@ -47,6 +47,7 @@ export default function StockGraph() {
   }, [])
 
   const active = hoverIdx !== null ? points[hoverIdx] : points[points.length - 1]
+  const isUp = points[points.length - 1].value >= points[0].value
   const growthPct = (((points[points.length - 1].value - points[0].value) / points[0].value) * 100).toFixed(0)
 
   return (
@@ -65,8 +66,12 @@ export default function StockGraph() {
           </p>
         </div>
         <span className="font-mono text-xs px-3 py-1.5 rounded-lg"
-          style={{ background: 'rgba(34,197,94,0.1)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.25)' }}>
-          ▲ {growthPct}% YoY
+          style={{
+            background: isUp ? 'rgba(var(--chart-up-rgb),0.1)' : 'rgba(var(--chart-down-rgb),0.1)',
+            color: isUp ? 'var(--chart-up)' : 'var(--chart-down)',
+            border: isUp ? '1px solid rgba(var(--chart-up-rgb),0.25)' : '1px solid rgba(var(--chart-down-rgb),0.25)',
+          }}>
+          {isUp ? '▲' : '▼'} {growthPct}% YoY
         </span>
       </div>
 
@@ -80,8 +85,8 @@ export default function StockGraph() {
         >
           <defs>
             <linearGradient id="stockFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="var(--c1)" stopOpacity="0.28" />
-              <stop offset="100%" stopColor="var(--c1)" stopOpacity="0" />
+              <stop offset="0%" stopColor="var(--chart-line)" stopOpacity="0.28" />
+              <stop offset="100%" stopColor="var(--chart-line)" stopOpacity="0" />
             </linearGradient>
           </defs>
 
@@ -91,7 +96,7 @@ export default function StockGraph() {
               x1={PAD_X} x2={WIDTH - PAD_X}
               y1={PAD_Y + (i * (HEIGHT - PAD_Y * 2)) / 3}
               y2={PAD_Y + (i * (HEIGHT - PAD_Y * 2)) / 3}
-              stroke="rgba(var(--c4-rgb),0.08)" strokeWidth="1"
+              stroke="rgba(var(--chart-grid-rgb),0.08)" strokeWidth="1"
             />
           ))}
 
@@ -108,7 +113,7 @@ export default function StockGraph() {
           <motion.path
             d={linePath}
             fill="none"
-            stroke="var(--c1)"
+            stroke="var(--chart-line)"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -123,8 +128,8 @@ export default function StockGraph() {
               <circle
                 cx={p.x} cy={p.y}
                 r={hoverIdx === i ? 5 : 3}
-                fill="var(--c1)"
-                stroke="var(--bg, #0b0b0c)"
+                fill="var(--chart-line)"
+                stroke="var(--bg)"
                 strokeWidth="2"
                 style={{ transition: 'r 0.15s ease', cursor: 'pointer' }}
                 onMouseEnter={() => setHoverIdx(i)}
