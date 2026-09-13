@@ -46,7 +46,7 @@ export default function DSA() {
   const theme = useTheme()
 
   const isDark = theme === 'dark'
-  const ghColor = isDark ? '2DD4BF' : '0F766E'
+  const ghColor = isDark ? 'CAD2C5' : '2F3E46'
   const ghTitle = isDark ? 'DEDED1' : '1A1710'
   const ghText = isDark ? 'B6AE9F' : '423E35'
 
