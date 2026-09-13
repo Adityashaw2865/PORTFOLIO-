@@ -22,11 +22,16 @@
   --c9: #2e2c2a;                           /* decorative faint 2 */
   --c10: #9e9a94;                          /* project description text */
 
-  /* Chart palette — dark */
-  --chart-line: #D4AF6A;      --chart-line-rgb: 212,175,106;
-  --chart-up: #34D399;        --chart-up-rgb: 52,211,153;
-  --chart-down: #F87171;      --chart-down-rgb: 248,113,113;
+  /* Chart palette — dark (professional slate/blue) */
+  --chart-line: #7DA6C9;      --chart-line-rgb: 125,166,201;
+  --chart-up: #4FAE8C;        --chart-up-rgb: 79,174,140;
+  --chart-down: #C77B6E;      --chart-down-rgb: 199,123,110;
   --chart-grid-rgb: 182,174,159;
+
+  /* GitHub contribution graph line colors (dark) */
+  --gh-graph-color: 7DA6C9;
+  --gh-graph-title: DEDED1;
+  --gh-graph-text: B6AE9F;
 }
 
 [data-theme="light"] {
@@ -47,11 +52,16 @@
   --c9: #D8D0BE;
   --c10: #625C4F;
 
-  /* Chart palette — light */
-  --chart-line: #8B6F1F;      --chart-line-rgb: 139,111,31;
-  --chart-up: #059669;        --chart-up-rgb: 5,150,105;
-  --chart-down: #DC2626;      --chart-down-rgb: 220,38,38;
+  /* Chart palette — light (professional slate/blue) */
+  --chart-line: #2E5A82;      --chart-line-rgb: 46,90,130;
+  --chart-up: #1E7A5C;        --chart-up-rgb: 30,122,92;
+  --chart-down: #A8402F;      --chart-down-rgb: 168,64,47;
   --chart-grid-rgb: 120,110,81;
+
+  /* GitHub contribution graph line colors (light) */
+  --gh-graph-color: 2E5A82;
+  --gh-graph-title: 1A1710;
+  --gh-graph-text: 423E35;
 }
 
 @layer base {
