@@ -12,7 +12,7 @@ const socials = [
   { icon: SiGithub, label: 'GitHub', sub: 'github.com/Adityashaw2865', href: 'https://github.com/Adityashaw2865' },
   { icon: FaLinkedin, label: 'LinkedIn', sub: 'Connect with me', href: 'https://www.linkedin.com/in/aditya-kumar-shaw-481735326' },
   { icon: SiGmail, label: 'Email', sub: 'aks09adi@gmail.com', href: 'mailto:aks09adi@gmail.com' },
-  { icon: SiLeetcode, label: 'LeetCode', sub: '200+ problems solved', href: 'https://leetcode.com/u/Aditya_shaw2006/' },
+  { icon: SiLeetcode, label: 'LeetCode', sub: '350+ problems solved', href: 'https://leetcode.com/u/Aditya_shaw2006/' },
 ]
 
 export default function Contact() {
