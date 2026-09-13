@@ -1,4 +1,3 @@
-
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
@@ -8,6 +7,15 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.14 } }
 const projects = [
   {
     num: '01',
+    title: 'MediKiosk — Smart India Hackathon 2026',
+    desc: 'A hospital OPD self-service kiosk built for SIH 2026 (PS 26047) by Team Code Tantra — role-based patient → triage → doctor flow, Bhashini ASR voice input in 8 languages, OCR document pipeline, Gemini-based clinical narrative generation, and FHIR bundle export.',
+    highlight: 'Voice input in 8 languages + real-time triage dashboard',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini API', 'FHIR'],
+    github: 'https://github.com/Adityashaw2865/SIH',
+    demo: 'https://sih-psi-virid.vercel.app/#/home',
+  },
+  {
+    num: '02',
     title: 'Portfolio Website',
     desc: 'A modern, animated personal portfolio built with React, Tailwind CSS, and Framer Motion — featuring a command palette, theme toggle, and smooth scroll-based interactions.',
     highlight: 'Command palette (Ctrl+K) + dark/light theme',
@@ -16,7 +24,7 @@ const projects = [
     demo: 'https://adityaxshaw-portfolio.vercel.app/',
   },
   {
-    num: '02',
+    num: '03',
     title: 'TaskFlow',
     desc: 'A MERN task tracker with full CRUD, real-time debounced search, filter/sort by status & priority, and a live stats dashboard.',
     highlight: 'Live dashboard with debounced real-time search',
@@ -25,7 +33,7 @@ const projects = [
     demo: 'https://taskflow-ochre-kappa.vercel.app/',
   },
   {
-    num: '03',
+    num: '04',
     title: 'Fake News Detection',
     desc: 'Research project comparing classical ML (LR, SVM, XGBoost) against fine-tuned BERT on the WELFake dataset (72k articles) — BERT hit ~99.2% accuracy. Built during my ML internship at NIT Jharkhand.',
     highlight: '99.2% accuracy on 72k-article dataset',
@@ -34,7 +42,7 @@ const projects = [
     demo: null,
   },
   {
-    num: '04',
+    num: '05',
     title: 'Ganga Aarti — Ramkrishnapur Ghat',
     desc: 'A live, bilingual (English/Hindi) static site for the Ganga Aarti at Ramkrishnapur Ghat, Howrah — one of my earliest deployed projects.',
     highlight: 'Bilingual, live in production',
@@ -43,22 +51,13 @@ const projects = [
     demo: 'https://ganga-arati.vercel.app/',
   },
   {
-    num: '05',
+    num: '06',
     title: 'Focusly',
     desc: 'A daily task tracker built to eliminate distraction — featuring clean task management, progress charts, and a minimal UI that keeps you in flow state.',
     highlight: 'Streak tracking + analytics heatmaps',
     tags: ['React', 'Vite', 'Recharts', 'Lucide React'],
     github: 'https://github.com/Adityashaw2865/focusly',
     demo: 'https://focusly-lilac.vercel.app/',
-  },
-  {
-    num: '06',
-    title: 'Inkline',
-    desc: 'A full-stack blog platform with JWT-based auth, category tagging, likes, and a nested comment system — built on a clean MERN backend with a lightweight Vite + React frontend.',
-    highlight: 'Secure auth + likes/comments system',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
-    github: 'https://github.com/Adityashaw2865/inkline-blog',
-    demo: 'https://inkline-blog.vercel.app/',
   },
 ]
 
