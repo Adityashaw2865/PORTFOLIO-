@@ -22,7 +22,7 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, tra
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }
 
 const dsaStats = [
-  { value: '200+', label: 'LeetCode Solved', sub: 'Regular problem solving' },
+  { value: '350+', label: 'LeetCode Solved', sub: 'Regular problem solving' },
   { value: '400+', label: 'CodeChef Solved', sub: 'Competitive programming' },
   { value: 'C++', label: 'Primary Language', sub: 'STL & competitive use' },
   { value: 'Daily', label: 'Practice Cadence', sub: 'Consistent grind' },
@@ -31,7 +31,7 @@ const dsaStats = [
 const topics = ['Arrays & Strings', 'Linked Lists', 'Trees & Graphs', 'Dynamic Programming', 'Sorting & Searching', 'Recursion & Backtracking', 'Stack & Queue', 'Hashing', 'Binary Search', 'Greedy Algorithms', 'Two Pointers', 'Sliding Window']
 
 const platforms = [
-  { name: 'LeetCode', sub: '200+ problems', href: 'https://leetcode.com/u/Aditya_shaw2006/' },
+  { name: 'LeetCode', sub: '350+ problems', href: 'https://leetcode.com/u/Aditya_shaw2006/' },
   { name: 'GeeksForGeeks', sub: 'Practice & articles', href: 'https://www.geeksforgeeks.org/profile/adityaxshaw' },
   { name: 'Codeforces', sub: 'Competitive rounds', href: 'https://codeforces.com/profile/Aditya_Xshaw' },
   { name: 'CodeChef', sub: '400+ solved', href: 'https://www.codechef.com/users/aditya_shaw09' },
@@ -125,9 +125,9 @@ export default function DSA() {
                 />
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden p-4" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
+            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
               <StatImage
-                src="https://ghchart.rshah.org/8B6F1F/Adityashaw2865"
+                src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=8B6F1F&line=8B6F1F&point=8B6F1F&hide_border=true&area=true&area_color=B6AE9F"
                 alt="Aditya's GitHub contribution graph"
                 fallbackLabel="Contribution Graph"
                 fallbackHref="https://github.com/Adityashaw2865"
