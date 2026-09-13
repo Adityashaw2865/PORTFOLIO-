@@ -19,7 +19,7 @@ function monthLabel(key) {
 
 export default function StockGraph() {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
+  const inView = useInView(ref, { once: true, amount: 0.2 })
   const [hoverIdx, setHoverIdx] = useState(null)
   const [monthlyData, setMonthlyData] = useState(null)
   const [status, setStatus] = useState('loading')
@@ -100,10 +100,13 @@ export default function StockGraph() {
 
   const { points, linePath, areaPath } = chart
   const active = hoverIdx !== null ? points[hoverIdx] : points[points.length - 1]
-  const first = points[0].value || 1
+
+  const baselineSlice = points.slice(0, Math.min(3, points.length))
+  const baseline = baselineSlice.reduce((sum, p) => sum + p.value, 0) / baselineSlice.length
   const last = points[points.length - 1].value
-  const isUp = last >= points[0].value
-  const growthPct = (((last - points[0].value) / first) * 100).toFixed(0)
+  const isUp = last >= baseline
+  const rawPct = baseline > 0 ? ((last - baseline) / baseline) * 100 : 0
+  const growthPct = Math.max(-999, Math.min(999, Math.round(rawPct)))
 
   return (
     <div ref={ref} className="rounded-2xl p-6 overflow-hidden relative"
@@ -156,8 +159,8 @@ export default function StockGraph() {
             d={areaPath}
             fill="url(#stockFill)"
             initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
           />
 
           <motion.path
@@ -167,9 +170,9 @@ export default function StockGraph() {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={inView ? { pathLength: 1 } : { pathLength: 0 }}
-            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
           />
 
           {points.map((p, i) => (
