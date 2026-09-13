@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import StockGraph from './StockGraph'
+import useTheme from '../hooks/useTheme'
 
 function StatImage({ src, alt, fallbackLabel, fallbackHref }) {
   const [failed, setFailed] = useState(false)
@@ -16,7 +17,7 @@ function StatImage({ src, alt, fallbackLabel, fallbackHref }) {
       </a>
     )
   }
-  return <img src={src} alt={alt} className="w-full" loading="lazy" onError={() => setFailed(true)} />
+  return <img src={src} alt={alt} className="w-full" loading="lazy" onError={() => setFailed(true)} key={src} />
 }
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }
@@ -42,6 +43,13 @@ const platforms = [
 export default function DSA() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const theme = useTheme()
+
+  // Colors read from CSS vars per theme, passed as hex (no #) into the stat image query params
+  const isDark = theme === 'dark'
+  const ghColor = isDark ? '7DA6C9' : '2E5A82'
+  const ghTitle = isDark ? 'DEDED1' : '1A1710'
+  const ghText = isDark ? 'B6AE9F' : '423E35'
 
   return (
     <section id="dsa" className="py-28 px-6 relative overflow-hidden">
@@ -105,7 +113,7 @@ export default function DSA() {
             </motion.div>
           </div>
 
-          {/* Stock-style progress graph */}
+          {/* Stock-style progress graph (live GitHub contributions) */}
           <motion.div variants={fadeUp} className="mt-8">
             <StockGraph />
           </motion.div>
@@ -116,7 +124,7 @@ export default function DSA() {
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
                 <StatImage
-                  src="https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=8B6F1F&icon_color=8B6F1F&text_color=5C5A52&ring_color=8B6F1F"
+                  src={`https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=${ghTitle}&icon_color=${ghColor}&text_color=${ghText}&ring_color=${ghColor}`}
                   alt="Aditya's GitHub stats"
                   fallbackLabel="GitHub Stats"
                   fallbackHref="https://github.com/Adityashaw2865"
@@ -124,7 +132,7 @@ export default function DSA() {
               </div>
               <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
                 <StatImage
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=8B6F1F&text_color=5C5A52"
+                  src={`https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=${ghTitle}&text_color=${ghText}`}
                   alt="Aditya's top languages"
                   fallbackLabel="Top Languages"
                   fallbackHref="https://github.com/Adityashaw2865"
@@ -133,7 +141,7 @@ export default function DSA() {
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
               <StatImage
-                src="https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=8B6F1F&line=8B6F1F&point=8B6F1F&hide_border=true&area=true&area_color=B6AE9F"
+                src={`https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=${ghColor}&line=${ghColor}&point=${ghColor}&hide_border=true&area=true&area_color=${ghColor}`}
                 alt="Aditya's GitHub contribution graph"
                 fallbackLabel="Contribution Graph"
                 fallbackHref="https://github.com/Adityashaw2865"
